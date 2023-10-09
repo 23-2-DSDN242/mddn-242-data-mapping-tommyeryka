@@ -3,13 +3,13 @@ let maskImg=null;
 let renderCounter=0;
 
 // change these three lines as appropiate
-let sourceFile = "input_4.jpg";
-let maskFile   = "mask_4.png";
-let outputFile = "output_4.png";
+let sourceFile = "input_new.jpg";
+let maskFile   = "mask_new.png";
+let outputFile = "output_1.png";
 
-function preload() {
-  sourceImg = loadImage(sourceFile);
-  maskImg = loadImage(maskFile);
+function preload() { 
+  sourceImg = loadImage(sourceFile); 
+  maskImg = loadImage(maskFile); 
 }
 
 function setup () {
@@ -24,7 +24,7 @@ function setup () {
 }
 
 function draw () {
-  for(let i=0;i<4000;i++) {
+  for(let i=0;i<40000;i++) {
     let x = floor(random(sourceImg.width));
     let y = floor(random(sourceImg.height));
     let pix = sourceImg.get(x, y);
@@ -35,7 +35,7 @@ function draw () {
       ellipse(x, y, pointSize, pointSize);
     }
     else {
-      let pointSize = 20;
+      let pointSize = 10;
       rect(x, y, pointSize, pointSize);    
     }
   }
