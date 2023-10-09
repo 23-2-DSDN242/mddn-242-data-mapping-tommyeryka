@@ -29,14 +29,12 @@ let Y_STOP = 1300;
 // let Y_STOP = 1080;
 let OFFSET = 15;
 
-
-
 //let renderCounter=0;
 
 function draw () {
   
   angleMode(DEGREES);
-  let num_lines_to_draw = 80;
+  let num_lines_to_draw = 40;
   // get one scanline
   for(let j=renderCounter; j<renderCounter+num_lines_to_draw && j<Y_STOP; j++) {
     for(let i=0; i<X_STOP; i++) {
@@ -44,9 +42,10 @@ function draw () {
       let mask = maskImg.get(i, j);
       if (mask[1] > 128) { //the blurr effect back or front
         pix = sourceImg.get(i, j);
+      
       }
       else {
-        let wave = sin(j*8);
+        let wave = sin(j*20); //changes blurr
         let slip = map(wave, -1, 1, -OFFSET, OFFSET);
         pix = sourceImg.get(i+slip, j);
 
@@ -58,6 +57,8 @@ function draw () {
 
       set(i, j, pix);
     }
+
+  
   }
   renderCounter = renderCounter + num_lines_to_draw;
   updatePixels();
@@ -66,8 +67,8 @@ function draw () {
   if(renderCounter > Y_STOP) {
     console.log("Done!")
     noLoop();
-    
   }
+
 /*
 function draw () {
   for(let i=0;i<40000;i++) {
