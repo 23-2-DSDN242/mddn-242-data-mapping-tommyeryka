@@ -27,9 +27,12 @@ let X_STOP = 1800;
 let Y_STOP = 1300;
 // let X_STOP = 1920;
 // let Y_STOP = 1080;
-let OFFSET = 20;
+let OFFSET = 15;
+
+
 
 //let renderCounter=0;
+
 function draw () {
   angleMode(DEGREES);
   let num_lines_to_draw = 80;
@@ -62,6 +65,7 @@ function draw () {
   if(renderCounter > Y_STOP) {
     console.log("Done!")
     noLoop();
+    
   }
 /*
 function draw () {
@@ -89,10 +93,11 @@ function draw () {
   }
 }
 */
-  }
+  
 function keyTyped() {
   if (key == '!') {
     saveBlocksImages();
   }
 }
   
+}
