@@ -34,6 +34,7 @@ let OFFSET = 15;
 //let renderCounter=0;
 
 function draw () {
+  
   angleMode(DEGREES);
   let num_lines_to_draw = 80;
   // get one scanline
@@ -41,7 +42,7 @@ function draw () {
     for(let i=0; i<X_STOP; i++) {
       colorMode(RGB);
       let mask = maskImg.get(i, j);
-      if (mask[1] < 128) {
+      if (mask[1] > 128) { //the blurr effect back or front
         pix = sourceImg.get(i, j);
       }
       else {
