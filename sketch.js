@@ -3,8 +3,8 @@ let maskImg=null;
 let renderCounter=0;
 
 // change these three lines as appropiate
-let sourceFile = "input_2.jpg";
-let maskFile   = "mask_2.png";
+let sourceFile = "input_new2.jpg";
+let maskFile   = "mask_new2.png";
 let outputFile = "output_3.png";
 
 function preload() { 
@@ -15,7 +15,7 @@ function preload() {
 }
 
 function setup () {
-  let main_canvas = createCanvas(1920, 1440);
+  let main_canvas = createCanvas(1800, 1350);
   main_canvas.parent('canvasContainer');
 
   imageMode(CENTER);
@@ -26,7 +26,7 @@ function setup () {
 }
 
 let X_STOP = 1800; //1920
-let Y_STOP = 1300; //1080
+let Y_STOP = 1350; //1080
 let OFFSET = 15;
 
 
@@ -51,11 +51,12 @@ function draw () {
       if(mask[0] > 128) { //sets can / mask col
         // draw the full pixels
         // let new_sat = map(s, 0, 100, 50, 100);
-        //let new_brt = map(b, 0, 100, 50, 100);
+        let new_brt = map(b, 0, 100, 100, 0);
        //  let new_hue = map(h, 0, 360, 180, 540);
        // let new_col = color(0,new_hue, new_sat, new_brt);
-       let new_col = color(h-100, s+50, b+20); //makes it normal color 
-      set(i, j, new_col);
+       let new_col = color(h-100, s+50, b+60); //makes it normal color 
+       //let new_col = color(h, 0, new_brt+20); //makes things colourless
+        set(i, j, new_col);
       }
       else { //sets background col
         // let new_brt = map(b, 0, 100, 20, 40);
@@ -71,7 +72,7 @@ function draw () {
 renderCounter = renderCounter + num_lines_to_draw;
 updatePixels();
 // print(renderCounter);
-if(renderCounter > 1440) {
+if(renderCounter > 1400) {
 console.log("Done!")
 noLoop();
 
