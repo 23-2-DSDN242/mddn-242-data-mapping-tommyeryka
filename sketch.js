@@ -5,13 +5,13 @@ let renderCounter=0;
 // change these three lines as appropiate
 let sourceFile = "input_2.jpg";
 let maskFile   = "mask_2.png";
-let outputFile = "output_1.png";
+let outputFile = "output_3.png";
 
 function preload() { 
   sourceImg = loadImage(sourceFile); 
   maskImg = loadImage(maskFile); 
 
-    textImg = loadImage("swirl.png");
+    textImg = loadImage("dots.png");
 }
 
 function setup () {
@@ -25,54 +25,69 @@ function setup () {
   maskImg.loadPixels();
 }
 
-let X_STOP = 1800;
-let Y_STOP = 1300;
-// let X_STOP = 1920; 
-// let Y_STOP = 1080;
+let X_STOP = 1800; //1920
+let Y_STOP = 1300; //1080
 let OFFSET = 15;
 
-//let renderCounter=0;
 
 function draw () {
   
- 
   let num_lines_to_draw = 40;
   // get one scanline
   for(let j=renderCounter; j<renderCounter+num_lines_to_draw && j<1080; j++) {
-    for(let i=0; i<X_STOP; i++) {
+    for(let i=0; i<1920; i++) {
       colorMode(RGB);
       let pix = sourceImg.get(i, j);
       // create a color from the values (always RGB)
       let col = color(pix);
       let mask = maskImg.get(i, j);
-      let tex = textImg.get(i, j);
 
-      if(mask[0] < 128) {
-        set(i, j, pix);
+      colorMode(HSB, 360, 100, 100); // max values for h s b 
+      // sets hue sat and brightness
+      let h = hue(col);
+      let s = saturation(col);
+      let b = brightness(col);
+
+      if(mask[0] > 128) { //sets can / mask col
+        // draw the full pixels
+        // let new_sat = map(s, 0, 100, 50, 100);
+        //let new_brt = map(b, 0, 100, 50, 100);
+       //  let new_hue = map(h, 0, 360, 180, 540);
+       // let new_col = color(0,new_hue, new_sat, new_brt);
+       let new_col = color(h-100, s+50, b+20); //makes it normal color 
+      set(i, j, new_col);
       }
-      else {
-        let new_col = [0, 0, 0, 255];
-        for(let k=0; k<3; k++) {
-          new_col[k] = map(40, 0, 100, pix[k], tex[k]);
-        }
-        // let new_col = color(h, s,  newBrt);
+      else { //sets background col
+        // let new_brt = map(b, 0, 100, 20, 40);
+        let new_bright = map(b, 0, 100, 100, 0);
+       let new_col = color(h+80, 80, new_bright-20);
+        //let new_col = color(h, s, b);
         set(i, j, new_col);
+
       }
     }
-  
-  renderCounter = renderCounter + num_lines_to_draw;
-  updatePixels();
+  }
+
+renderCounter = renderCounter + num_lines_to_draw;
+updatePixels();
+// print(renderCounter);
+if(renderCounter > 1440) {
+console.log("Done!")
+noLoop();
+
+renderCounter = renderCounter + num_lines_to_draw;
+updatePixels();
 
   // print(renderCounter);
   if(renderCounter > Y_STOP) {
     console.log("Done!")
     noLoop();
 
-    
+
+
+  // creates the wave effect
 
   angleMode(DEGREES);
-  let num_lines_to_draw = 40;
-  // get one scanline
   for(let j=renderCounter; j<renderCounter+num_lines_to_draw && j<Y_STOP; j++) {
     for(let i=0; i<X_STOP; i++) {
       colorMode(RGB);
@@ -86,17 +101,9 @@ function draw () {
         let slip = map(wave, -1, 1, -OFFSET, OFFSET);
         pix = sourceImg.get(i+slip, j);
 
-     
-      
-  // for(let c=0; c<3; c++) {
-       //  pix[c] = brt;
-      // }
       }
-
       set(i, j, pix);
     }
-
-  
         }
   renderCounter = renderCounter + num_lines_to_draw;
   updatePixels();
@@ -108,7 +115,6 @@ function draw () {
 
  
   }
-}
 
 /*
 function draw () {
@@ -145,3 +151,4 @@ function keyTyped() {
   
       }
     }
+}
