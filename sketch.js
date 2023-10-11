@@ -3,9 +3,9 @@ let maskImg=null;
 let renderCounter=0;
 
 // change these three lines as appropiate
-let sourceFile = "input_new3.jpg";
-let maskFile   = "mask_new3.png";
-let outputFile = "output_3.png";
+let sourceFile = "input_1.jpg";
+let maskFile   = "mask_1.png";
+let outputFile = "output_1.png";
 
 function preload() { 
   sourceImg = loadImage(sourceFile); 
@@ -49,13 +49,12 @@ function draw () {
 
       if(mask[0] > 128) { //sets can / mask col
         // draw the full pixels
-        let new_brt = map(b, 0, 100, 100, 0);
-       let new_col = color(h-100, s+50, b+60); //makes it normal color 
+       let new_col = color(h-80, s+20, b+100); //makes it normal color 
         set(i, j, new_col);
       }
       else { //sets background col
         let new_bright = map(b, 0, 100, 100, 0);
-       let new_col = color(h+80, 80, new_bright-20);
+       let new_col = color(h+80, 80, new_bright-15);
         set(i, j, new_col);
 
       }
