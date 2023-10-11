@@ -3,8 +3,8 @@ let maskImg=null;
 let renderCounter=0;
 
 // change these three lines as appropiate
-let sourceFile = "input_1.jpg";
-let maskFile   = "mask_1.png";
+let sourceFile = "input_new2.jpg";
+let maskFile   = "mask_new2.png";
 let outputFile = "output_1.png";
 
 function preload() { 
@@ -24,8 +24,8 @@ function setup () {
   
 }
 
-let X_STOP = 1920; //1920..had to resize to fit image
-let Y_STOP = 1080; //1080
+let X_STOP = 1920; //
+let Y_STOP = 1080; //
 let OFFSET = 15;
 
 
