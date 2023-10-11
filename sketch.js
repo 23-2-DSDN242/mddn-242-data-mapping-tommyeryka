@@ -30,7 +30,7 @@ let OFFSET = 15;
 
 
 function draw () {
-  
+  // changes colours... mask and background
   let num_lines_to_draw = 40;
   // get one scanline
   for(let j=renderCounter; j<renderCounter+num_lines_to_draw && j<1080; j++) {
@@ -69,39 +69,6 @@ if(renderCounter > 1400) {
 console.log("Done!")
 noLoop();
 }
-
-
-/*
-  // creates the wave effect
-
-  angleMode(DEGREES);
-  for(let j=renderCounter; j<renderCounter+num_lines_to_draw && j<Y_STOP; j++) {
-    for(let i=0; i<X_STOP; i++) {
-      colorMode(RGB);
-      let mask = maskImg.get(i, j);
-      if (mask[1] > 128) { //the blurr effect back or front
-        pix = sourceImg.get(i, j);
-      
-      }
-      else {
-        let wave = sin(j*20); //changes blurr
-        let slip = map(wave, -1, 1, -OFFSET, OFFSET);
-        pix = sourceImg.get(i+slip, j);
-
-      }
-      set(i, j, pix);
-    }
-        }
-  renderCounter = renderCounter + num_lines_to_draw;
-  updatePixels();
-
-  // print(renderCounter);
-  if(renderCounter > Y_STOP) {
-    console.log("Done!")
-    noLoop();
-
-  }
-*/
 
   
 function keyTyped() {
