@@ -21,6 +21,7 @@ function setup () {
   background(255);
   sourceImg.loadPixels();
   maskImg.loadPixels();
+  
 }
 
 let X_STOP = 1800; //1920..had to resize to fit image
@@ -67,14 +68,7 @@ updatePixels();
 if(renderCounter > 1400) {
 console.log("Done!")
 noLoop();
-
-renderCounter = renderCounter + num_lines_to_draw;
-updatePixels();
-
-  // print(renderCounter);
-  if(renderCounter > Y_STOP) {
-    console.log("Done!")
-    noLoop();
+}
 
 
 /*
@@ -117,5 +111,3 @@ function keyTyped() {
 }
   
       }
-    }
-}
