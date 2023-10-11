@@ -24,8 +24,8 @@ function setup () {
   
 }
 
-let X_STOP = 1920; //
-let Y_STOP = 1080; //
+let X_STOP = 1920;
+let Y_STOP = 1080;
 let OFFSET = 15;
 
 
