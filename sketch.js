@@ -3,9 +3,9 @@ let maskImg=null;
 let renderCounter=0;
 
 // change these three lines as appropiate
-let sourceFile = "input_1.jpg";
-let maskFile   = "mask_1.png";
-let outputFile = "output_1.png";
+let sourceFile = "input_3.jpg";
+let maskFile   = "mask_3.png";
+let outputFile = "output_3.png";
 
 function preload() { 
   sourceImg = loadImage(sourceFile); 
@@ -13,7 +13,7 @@ function preload() {
 }
 
 function setup () {
-  let main_canvas = createCanvas(1920, 1080);
+  let main_canvas = createCanvas(1800, 1080);
   main_canvas.parent('canvasContainer');
 
   imageMode(CENTER);
