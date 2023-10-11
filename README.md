@@ -1,6 +1,6 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/fhdOjw6q)
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg)](https://classroom.github.com/online_ide?assignment_repo_id=11930286&assignment_repo_type=AssignmentRepo)
-## Nocturnal Study Trip: Sip and Flip: Tripping on Knowledge with Energy Drinks
+## Unfocused All-Nighter: Sip and Flip: The Pre-Buzz Paradox
 
 At first, my original intention was to create visual compositions derived from patterns, particularly exploring the recognition of shapes and objects within repetitive designs. I had initially planned to focus on capturing the essence of a tivaevae, but I encountered difficulties in obtaining satisfactory images of this subject. This compelled me to come up with an alternative concept, but what could it be?
 
