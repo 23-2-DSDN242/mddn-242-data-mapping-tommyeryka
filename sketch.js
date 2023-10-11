@@ -3,15 +3,13 @@ let maskImg=null;
 let renderCounter=0;
 
 // change these three lines as appropiate
-let sourceFile = "input_new2.jpg";
-let maskFile   = "mask_new2.png";
+let sourceFile = "input_1.jpg";
+let maskFile   = "mask_1.png";
 let outputFile = "output_3.png";
 
 function preload() { 
   sourceImg = loadImage(sourceFile); 
   maskImg = loadImage(maskFile); 
-
-    textImg = loadImage("dots.png");
 }
 
 function setup () {
@@ -25,7 +23,7 @@ function setup () {
   maskImg.loadPixels();
 }
 
-let X_STOP = 1800; //1920
+let X_STOP = 1800; //1920..had to resize to fit image
 let Y_STOP = 1350; //1080
 let OFFSET = 15;
 
@@ -50,19 +48,13 @@ function draw () {
 
       if(mask[0] > 128) { //sets can / mask col
         // draw the full pixels
-        // let new_sat = map(s, 0, 100, 50, 100);
         let new_brt = map(b, 0, 100, 100, 0);
-       //  let new_hue = map(h, 0, 360, 180, 540);
-       // let new_col = color(0,new_hue, new_sat, new_brt);
        let new_col = color(h-100, s+50, b+60); //makes it normal color 
-       //let new_col = color(h, 0, new_brt+20); //makes things colourless
         set(i, j, new_col);
       }
       else { //sets background col
-        // let new_brt = map(b, 0, 100, 20, 40);
         let new_bright = map(b, 0, 100, 100, 0);
        let new_col = color(h+80, 80, new_bright-20);
-        //let new_col = color(h, s, b);
         set(i, j, new_col);
 
       }
@@ -85,7 +77,7 @@ updatePixels();
     noLoop();
 
 
-
+/*
   // creates the wave effect
 
   angleMode(DEGREES);
@@ -114,35 +106,9 @@ updatePixels();
     console.log("Done!")
     noLoop();
 
- 
   }
-
-/*
-function draw () {
-  for(let i=0;i<40000;i++) {
-    let x = floor(random(sourceImg.width));
-    let y = floor(random(sourceImg.height));
-    let pix = sourceImg.get(x, y);
-    let mask = maskImg.get(x, y);
-    fill(pix);
-    if(mask[0] > 128) {
-      let pointSize = 10;
-      ellipse(x, y, pointSize, pointSize);
-    }
-    else {
-      let pointSize = 10;
-      rect(x, y, pointSize, pointSize);    
-    }
-  }
-  renderCounter = renderCounter + 1;
-  if(renderCounter > 10) {
-    console.log("Done!")
-    noLoop();
-    // uncomment this to save the result
-    // saveArtworkImage(outputFile);
-  }
-}
 */
+
   
 function keyTyped() {
   if (key == '!') {
