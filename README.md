@@ -8,6 +8,7 @@ After numerous days and nights of dedicated research and project work, I eventua
 
 My goal was to emphasize the energy drink can while visually representing the amalgamation of sleep deprivation and caffeine's effects, as they manifested to me. I aimed to capture the pre-energy drink experience, where everything seemed both brilliantly illuminated yet shrouded in darkness, making it challenging to concentrate on tasks, while the energy drink appeared even more luminous, almost as if one's subconscious insisted it was indispensable. I wanted to accentuate this so that viewers would be compelled to take notice.
 
-In my approach, I instructed the AI to single out each Rockstar can by a specific blue and orange/pink hue, with the background deliberately rendered in a fuzzy, pixelated manner and color-inverted. The oversaturation of background colors contributed to a glitch-like texture, which, in my view, added an intriguing dimension. Additionally, I slightly stretched the images to impart a sense of dissociation or zoning out.
+In my approach, I instructed the AI to single out each Rockstar can by a specific blue and orange/pink hue, with the background deliberately rendered in a fuzzy, pixelated manner and color-inverted. The oversaturation of background colors contributed to a glitch-like texture, which, in my view, added an intriguing dimension. Additionally, I slightly stretched the images to impart a sense of dissociation or zoning out. 
+To further test the AI camera worked, I added more than one can into the frame as well as holding it in my hand to see how the AI would respond in the testing bit. I think they turned out pretty good.
 
 It feels as if one is in a distorted, parallel dimension.
